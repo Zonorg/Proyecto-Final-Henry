@@ -1,0 +1,86 @@
+.button-open-filters {
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--dark-color);
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  align-self: flex-start;
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+// Estilo para el input y los selectores
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  input {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--storm-gray-matte);
+    padding: 0 10px;
+    font-size: 1rem;
+    &:focus {
+      outline: none;
+      border: 1px solid var(--steel-blue-matte);
+    }
+  }
+  select {
+    width: 300px;
+    height: 30px;
+  }
+}
+
+// Estilo para los botones
+.modal-footer {
+  display: flex;
+  justify-content: center; // Centrar los botones
+  button {
+    &:first-child {
+      color: white;
+      background-color: var(--steel-blue-medium-matte);
+      &:hover {
+        color: white;
+        background-color: var(--steel-blue-matte);
+      }
+    }
+    &:last-child {
+      background-color: var(--storm-gray-light-matte);
+      color: white;
+      &:hover {
+        color: white;
+        background-color: var(--storm-gray-matte);
+      }
+    }
+    width: 300px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .button-open-filters {
+    font-size: 14px;
+    border: none;
+    align-self: flex-start;
+    svg{
+      margin: 0;
+    }
+  }
+}
