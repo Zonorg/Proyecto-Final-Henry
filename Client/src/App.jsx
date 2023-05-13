@@ -1,6 +1,5 @@
 import "./app.scss";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Landing from "./components/Landing/Landing";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
@@ -17,13 +16,12 @@ import Footer from "./components/Footer/Footer";
 import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
-  const location = useLocation();
 
   return (
     <div className="app" id="app">
-      {location.pathname !== "/" && <Navbar />}
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -36,8 +34,8 @@ function App() {
         <Route path="/password/reset" element={<ForgotPass />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-      {location.pathname !== "/" && <ChatBot />}
-      {location.pathname !== "/" && <Footer />}
+      <ChatBot />
+      <Footer />
     </div>
   );
 }
